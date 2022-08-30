@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="/assets/estilos/styles.css">
+</head>
+
+<body>
+    <div class="container">
+            <!-- Elementos para el carrito -->
+            <main id="items">
+                <h1>Carrito de compras</h1>
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/camisa.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Camisa lunares</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card" >
+                    <img class="card-img-top" src="assets/img/campera.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Campera Kaki</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="assets/img/remera_negra.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Remera rock</h5>
+                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    </div>
+                </div>
+            </main>
+            <!-- Carrito -->
+            <aside class="col-sm-4">
+                <h2>Resumen de compra</h2>
+                <!-- Elementos del carrito -->
+                <ul id="carrito" class="list-group"></ul>
+                <hr>
+                <!-- Precio total -->
+                <p class="text-right">Total: <span id="total"></span>&#36;</p>
+                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+            </aside>
+    </div>
+    <script src="assets/js/primer_desafio.js"></script>
+</body>
+</html>

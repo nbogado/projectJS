@@ -1,0 +1,26 @@
+* {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 10%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+main, aside {
+    margin: 3%;
+}
+
+
+
+
+
+
+
+
