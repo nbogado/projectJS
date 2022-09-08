@@ -2,54 +2,119 @@
 <html lang="es">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src="assets/bootstrap/js/jquery.slim.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/assets/estilos/styles.css">
 </head>
 
 <body>
     <div class="container">
-            <!-- Elementos para el carrito -->
-            <main id="items">
-                <h1>Carrito de compras</h1>
-                <div class="card">
-                    <img class="card-img-top" src="assets/img/camisa.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Camisa lunares</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
+            <div class="container-fluid p-0"> <a class="navbar-brand text-uppercase fw-800" href="#"><span
+                        class="border-red pe-2">Nuevos</span> Productos</a> <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#myNav" aria-controls="myNav" aria-expanded="false"
+                    aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button>
+                <div class="collapse navbar-collapse" id="myNav">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active" aria-current="page" href="#">Todos los productos</a>
+                        <a class="nav-link" href="#">Mujer</a>
+                        <a class="nav-link" href="#">Hombre</a>
+                        <a class="nav-link" href="#">Accesorios</a>
                     </div>
                 </div>
-                <div class="card" >
-                    <img class="card-img-top" src="assets/img/campera.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Campera Kaki</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
+            </div>
+        </nav>
+        <div class="row">
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="Sweater gris polera">
                 </div>
-                <div class="card">
-                    <img class="card-img-top" src="assets/img/remera_negra.jpg" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Remera rock</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-                        <a href="#" class="btn btn-primary">Agregar al carrito</a>
-                    </div>
+                <p class="title pt-4 pb-1">Sweater de Invierno</p>
+                <p class="price">$ 60.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/6764040/pexels-photo-6764040.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="Campera puffer de Jean">
                 </div>
-            </main>
-            <!-- Carrito -->
-            <aside class="col-sm-4">
-                <h2>Resumen de compra</h2>
-                <!-- Elementos del carrito -->
-                <ul id="carrito" class="list-group"></ul>
-                <hr>
-                <!-- Precio total -->
-                <p class="text-right">Total: <span id="total"></span>&#36;</p>
-                <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-            </aside>
+                <p class="title pt-4 pb-1">Campera Puffer Denim</p>
+                <p class="price">$ 55.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+                <p class="title pt-4 pb-1">Pantalon Con Encaje</p>
+                <p class="price">$ 70.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+                <p class="title pt-4 pb-1">Buzo Deportivo</p>
+                <p class="price">$ 60.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+                <p class="title pt-4 pb-1">Sweater de Invierno</p>
+                <p class="price">$ 60.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/6764040/pexels-photo-6764040.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+                <p class="title pt-4 pb-1">Campera Puffer Denim</p>
+                <p class="price">$ 55.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/914668/pexels-photo-914668.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+                <p class="title pt-4 pb-1">Pantalon Con Encaje</p>
+                <p class="price">$ 70.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+            <div
+                class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product">
+                    <img src="https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="">
+                </div>
+                <p class="title pt-4 pb-1">Buzo Deportivo</p>
+                <p class="price">$ 60.0</p>
+                <button class="btn btn-primary" type="submit">Comprar</button>
+            </div>
+        </div>
     </div>
     <script src="assets/js/primer_desafio.js"></script>
 </body>
+
 </html>
