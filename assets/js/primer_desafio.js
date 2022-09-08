@@ -109,3 +109,5 @@ function messageFormation() {
 }
 
 alert(messageFormation());
+//solo con fines de la entrega llamo en alert el array carrito para ver que esta guardando los productos que el usuario ingresa:
+alert(carritoProducto);
