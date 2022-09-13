@@ -1,59 +1,84 @@
-//crear una funcion que valide si camisa, remera o campera estan inicializadas y sino inicializarlas (flag).Usar funcion que torne otra funcion(true/false).
-// Puedo hacer un metodo de busqueda .map y luego un .reduce para calcular el precio total a pagar en el carrito. y tmb para el total de productos q tengo en el carrito sobre el array de productos y de los valores
-// Array con los productos que tengo para comprar o objeto con array para pner las propiedades de cada prodcuto como color, talle y precio?
-// El carrito tiene que ser un array vacio que se deberia llenar a medida que se agregan productos, y eliminar en caso q se eliminen, modificar en caso que hahya un modificacion de color o demas.
+//Array de los talles que van a tener todos los productos:
+const tallesProductos = ["s", "m", "l"];
 
-// Array de los productos que va a tener el e-Commerce
+// Array de los productos que va a tener el e-Commerce:
 const productos = [
     {
-        nombre: "remera",
-        precio: 20,
-        colores: ["negra", "azul"],
-        talles: ["s", "m", "l"]
+        id: 1,
+        nombre: "Remera Rise UP",
+        precio: 6999.00,
+        colores: ["Negro", "Blanco", "Gris"],
+        talles: tallesProductos
     },
     {
-        nombre: "camisa",
-        precio: 20,
-        colores: ["negra", "azul"],
-        talles: ["s", "m", "l"]
+        id: 2,
+        nombre: "Camisa Lisa",
+        precio: 19999.00,
+        colores: ["Negro", "Celeste", "Blanco"],
+        talles: tallesProductos
     },
     {
-        nombre: "buzo",
-        precio: 20,
-        colores: ["negra", "azul"],
-        talles: ["s", "m", "l"]
+        id: 3,
+        nombre: "Buzo Oversize",
+        precio: 14999.00,
+        colores: ["Negro", "Azul", "Naranja", "Verde"],
+        talles: tallesProductos
     },
     {
-        nombre: "campera",
-        precio: 20,
-        colores: ["negra", "azul"],
-        talles: ["s", "m", "l"]
+        id: 4,
+        nombre: "Campera Puffer",
+        precio: 20999.99,
+        colores: ["Negro", "Marron"],
+        talles: tallesProductos
     },
     {
-        nombre: "short",
+        id: 5,
+        nombre: "Short Jean Classic",
         precio: 20,
-        colores: ["negra", "azul"],
-        talles: ["s", "m", "l"]
+        colores: ["Unico Color"],
+        talles: talles
     },
     {
-        nombre: "saco",
-        precio: 20,
-        colores: ["negra", "azul"],
-        talles: ["s", "m", "l"]
+        id: 6,
+        nombre: "Blazer Budapest",
+        precio: 39999.00,
+        colores: ["Verde", "Naranja", "Rosa"],
+        talles: tallesProductos
     },
+    {
+        id: 7,
+        nombre: "Remera New York",
+        precio: 6999.00,
+        colores: ["Negro", "Blanco"],
+        talles: tallesProductos
+    },
+    {
+        id: 8,
+        nombre: "Pantalon Budapest",
+        precio: 25999.00,
+        colores: ["Verde", "Naranja", "Rosa"],
+        talles: tallesProductos
+    }
 ];
 
-//Array que va a llenarse con los productos que se vayan seleccionando y agregando al carrito con el push:
+//Array que va a llenarse con los productos que vaya seleccionado el usuario y agregando al carrito con el push:
 let carritoProducto = [];
 
+
+//IMPORTANTE: MODIFICAR ESTO PARA VALIDAR Y VER DE INICIALIZARLO CUANDO CORRESPONDA:
 let camisa = 0;
 let remera = 0;
 let campera = 0;
+
+
 let confirmProduct;
-const valueRemera = 10;
+let totalValue;
+
+//IMPORTANTE: Esto deberia cambiarse y usar el precio que esta en el array de productos:
+const valueRemera = 10; 
 const valueCamisa = 50;
 const valueCampera = 100;
-let totalValue;
+
 
 do {
     const solicitarProduct = (prompt('Por favor ingrese de a uno el producto que quiere comprar:\nRemera = $10\nCampera = $100\nCamisa  = $50')).toLowerCase();
