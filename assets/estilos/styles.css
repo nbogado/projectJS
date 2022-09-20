@@ -48,13 +48,13 @@
 }
 
 /* Estilos del btn comprar */
-.btn {
+#btnComprar {
     background-color: #49C608;
     border: none;
     font-weight: bold;
 }
 
-.btn:hover {
+#btnComprar:hover {
     background-color: #fff;
     color: #49C608;
     border-top: #49C608 solid 2px;

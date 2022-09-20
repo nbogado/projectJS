@@ -1,9 +1,3 @@
-const contenedorCardsIndex = document.getElementById('contenedorCardsIndex');
-
-
-//Array de los talles que van a tener todos los productos:
-const tallesProductos = ["s", "m", "l"];
-
 // Array de los productos que va a tener el e-Commerce:
 const productos = [
     {
@@ -71,27 +65,3 @@ const productos = [
         img: "assets/img/pantalon_encaje.jpg"
     }
 ];
-
-//Array que va a llenarse con los productos que vaya seleccionado el usuario y agregando al carrito con el push:
-let productosDelCarrito = [];
-
-
-
-
-
-//For para recorrer array de productos y funcion para mostrarlo en el html:
-productos.forEach((items) => {
-    let productItem = document.createElement('div');
-    productItem.className = "col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3";
-    productItem.innerHTML = `
-        <div class="product">
-            <img src="${items.img}" alt="Sweater gris polera">
-        </div>
-        <p class="title pt-4 pb-1">${items.nombre}</p>
-        <p class="price">$ ${items.precio}</p>
-        <button id="btnComprar" class="btn btn-primary" type="submit">Comprar</button>
-    `
-    
-    contenedorCardsIndex.append(productItem);
-
-});
