@@ -1,3 +1,6 @@
+const contenedorCardsIndex = document.getElementById('contenedorCardsIndex');
+
+
 //Array de los talles que van a tener todos los productos:
 const tallesProductos = ["s", "m", "l"];
 
@@ -5,136 +8,87 @@ const tallesProductos = ["s", "m", "l"];
 const productos = [
     {
         id: 1,
-        nombre: "Remera Rise UP",
+        nombre: "Remera Chicago",
         precio: 6999.00,
         colores: ["Negro", "Blanco", "Gris"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/remera_chicago.jpg"
     },
     {
         id: 2,
         nombre: "Camisa Lisa",
         precio: 19999.00,
         colores: ["Negro", "Celeste", "Blanco"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/camisa_lisa.jpg"
     },
     {
         id: 3,
         nombre: "Buzo Oversize",
         precio: 14999.00,
         colores: ["Negro", "Azul", "Naranja", "Verde"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/buzo_oversize.jpg"
     },
     {
         id: 4,
         nombre: "Campera Puffer",
         precio: 20999.99,
         colores: ["Negro", "Marron"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/campera_puffer.jpg"
     },
     {
         id: 5,
         nombre: "Short Jean Classic",
         precio: 20,
         colores: ["Unico Color"],
-        talles: talles
+        talles: tallesProductos,
+        img: "assets/img/short_jean.jpg"
     },
     {
         id: 6,
         nombre: "Blazer Budapest",
         precio: 39999.00,
         colores: ["Verde", "Naranja", "Rosa"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/blazer_budapest.jpg"
     },
     {
         id: 7,
         nombre: "Remera New York",
         precio: 6999.00,
         colores: ["Negro", "Blanco"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/remera_new_york.jpg"
     },
     {
         id: 8,
-        nombre: "Pantalon Budapest",
+        nombre: "Pantalon Encaje",
         precio: 25999.00,
         colores: ["Verde", "Naranja", "Rosa"],
-        talles: tallesProductos
+        talles: tallesProductos,
+        img: "assets/img/pantalon_encaje.jpg"
     }
 ];
 
 //Array que va a llenarse con los productos que vaya seleccionado el usuario y agregando al carrito con el push:
-let carritoProducto = [];
+let productosDelCarrito = [];
 
+//For para recorrer array de productos y funcion para mostrarlo en el html:
+productos.forEach((items) => {
+    let productItem = document.createElement('div');
+    productItem.innerHTML = `
+    <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+        <div class="product">
+            <img src="${items.img}" alt="Sweater gris polera">
+        </div>
+        <p class="title pt-4 pb-1">${items.nombre}</p>
+        <p class="price">$ ${items.precio}</p>
+        <button class="btn btn-primary" type="submit">Comprar</button>       
+    </div>
+    `
 
-//IMPORTANTE: MODIFICAR ESTO PARA VALIDAR Y VER DE INICIALIZARLO CUANDO CORRESPONDA:
-let camisa = 0;
-let remera = 0;
-let campera = 0;
+    contenedorCardsIndex.append(productItem);
 
-
-let confirmProduct;
-let totalValue;
-
-//IMPORTANTE: Esto deberia cambiarse y usar el precio que esta en el array de productos:
-const valueRemera = 10; 
-const valueCamisa = 50;
-const valueCampera = 100;
-
-
-do {
-    const solicitarProduct = (prompt('Por favor ingrese de a uno el producto que quiere comprar:\nRemera = $10\nCampera = $100\nCamisa  = $50')).toLowerCase();
-
-    function totalCartValue(valorProducto) {
-        if (totalValue == null) {
-            totalValue = 0;
-            totalValue += valorProducto;
-        } else {
-            totalValue += valorProducto;
-        }
-        return totalValue;
-    }
-
-    switch (solicitarProduct) {
-        case "camisa":
-            camisa++;
-            totalCartValue(valueCamisa);
-            carritoProducto.push("camisa")
-            break;
-        case "remera":
-            remera++;
-            totalCartValue(valueRemera);
-            carritoProducto.push("remera")
-            break;
-        case "campera":
-            campera++;
-            totalCartValue(valueCampera);
-            carritoProducto.push("campera")
-            break;
-        default:
-            alert('No vendemos el producto que ingresaste, solo puede elegir entre remera, campera o camisa');
-            break;
-    }
-    confirmProduct = (prompt('¿Desea seguir agregando productos? Responda con "si" si desea agregar mas, de lo contraro ingrese "no"')).toLowerCase();
-} while (confirmProduct != "no");
-
-function messageFormation() {
-    let message = 'Resumen de compra\n';
-    if (camisa > 0) {
-        message += 'Camisas: ' + camisa + '\n';
-    }
-    if (remera > 0) {
-        message += 'Remeras: ' + remera + '\n';
-    }
-    if (campera > 0) {
-        message += 'Camperas: ' + campera + '\n';
-    }
-
-    message += 'Total a pagar: ' + totalValue;
-
-    return message;
-}
-
-alert(messageFormation());
-//solo con fines de la entrega llamo en alert el array carrito para ver que esta guardando los productos que el usuario ingresa:
-alert(carritoProducto);
-
-
+});
