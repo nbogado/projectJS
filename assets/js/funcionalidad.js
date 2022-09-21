@@ -1,8 +1,9 @@
 const contenedorCardsIndex = document.getElementById('contenedorCardsIndex');
+const tallesProductos = ["s", "m", "l"]; //Array de los talles que van a tener todos los productos
+let productosDelCarrito = []; //Array que va a llenarse con los productos que vaya seleccionado el usuario y agregando al carrito con el push
+const botonCarrito = document.getElementById('botonCarrito');
+const contenedorCardsMiCarrito = document.getElementById('contenedorCardsMiCarrito');
 
-
-//Array de los talles que van a tener todos los productos:
-const tallesProductos = ["s", "m", "l"];
 
 // Array de los productos que va a tener el e-Commerce:
 const productos = [
@@ -72,12 +73,6 @@ const productos = [
     }
 ];
 
-//Array que va a llenarse con los productos que vaya seleccionado el usuario y agregando al carrito con el push:
-let productosDelCarrito = [];
-
-
-
-
 
 //For para recorrer array de productos y funcion para mostrarlo en el html:
 productos.forEach((items) => {
@@ -89,9 +84,71 @@ productos.forEach((items) => {
         </div>
         <p class="title pt-4 pb-1">${items.nombre}</p>
         <p class="price">$ ${items.precio}</p>
-        <button id="btnComprar" class="btn btn-primary" type="submit">Comprar</button>
     `
-    
+
     contenedorCardsIndex.append(productItem);
 
+    let btnComprar = document.createElement("button");
+    btnComprar.innerText = "Comprar";
+    btnComprar.className = "btn btn-primary";
+    btnComprar.id = "btnComprar";
+
+    productItem.append(btnComprar);
+    
+    btnComprar.addEventListener("click", () => {
+        productosDelCarrito.push({
+            id: productos.id,
+            nombre: productos.nombre,
+            precio: productos.precio,
+            img: productos.img,
+        });
+        console.log(productosDelCarrito);
+
+
+    });
 });
+
+botonCarrito.addEventListener("click", () => {
+    contenedorCardsMiCarrito.innerHTML = "";
+    contenedorCardsMiCarrito.style.display = "flex";
+    const modalCabeceraCarrito = document.createElement("div");
+    modalCabeceraCarrito.className = "modalCabeceraCarrito";
+    modalCabeceraCarrito.innerHTML = `
+    <p class="modal-Cabecera-Carrito">Mi Carrito</p>
+    `;
+    contenedorCardsMiCarrito.append(modalCabeceraCarrito);
+
+    const modalBotonCierre = document.createElement("button");
+    modalBotonCierre.innerText = "X";
+    modalBotonCierre.className = "modal-Boton-Cierre.cabecera";
+
+    modalCabeceraCarrito.append(modalBotonCierre);
+
+    modalBotonCierre.addEventListener("click", () => {
+        contenedorCardsMiCarrito.style.display = "none";
+    });
+
+
+
+    
+    productosDelCarrito.forEach((items) => {
+        let contenedorCarrito = document.createElement('div');
+        contenedorCarrito.className = "contenedor-carrito";
+        contenedorCarrito.innerHTML = `
+        <img src="${items.img}">
+        <p>${items.nombre}</p>
+        <p>$ ${items.precio}</p>
+        `
+        contenedorCardsMiCarrito.append(contenedorCarrito);
+    });
+
+    let total = productosDelCarrito.reduce((acc, el) => acc + el.precio, 0);
+
+    const contenedorPrecioTotalModal = document.createElement("div");
+    contenedorPrecioTotalModal.className = "contenedorPrecioTotalModal";
+    contenedorPrecioTotalModal.innerHTML = `Total:$ ${total}`;
+
+    contenedorCardsMiCarrito.append(contenedorPrecioTotalModal);
+});
+
+
