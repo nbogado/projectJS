@@ -85,22 +85,20 @@ productos.forEach((items) => {
         <p class="title pt-4 pb-1">${items.nombre}</p>
         <p class="price">$ ${items.precio}</p>
     `
-
     contenedorCardsIndex.append(productItem);
 
     let btnComprar = document.createElement("button");
     btnComprar.innerText = "Comprar";
     btnComprar.className = "btn btn-primary";
     btnComprar.id = "btnComprar";
-
     productItem.append(btnComprar);
     
     btnComprar.addEventListener("click", () => {
         productosDelCarrito.push({
-            id: productos.id,
-            nombre: productos.nombre,
-            precio: productos.precio,
-            img: productos.img,
+            id: items.id,
+            nombre: items.nombre,
+            precio: items.precio,
+            img: items.img,
         });
         console.log(productosDelCarrito);
 
