@@ -37,7 +37,7 @@ const productos = [
     {
         id: 5,
         nombre: "Short Jean Classic",
-        precio: 20,
+        precio: 20000.00,
         colores: ["Unico Color"],
         talles: tallesProductos,
         img: "assets/img/short_jean.jpg"
