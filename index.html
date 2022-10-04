@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Shop</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/estilos/styles.css">
     <script src="https://kit.fontawesome.com/e9598d65a3.js" crossorigin="anonymous"></script>
 </head>
@@ -24,16 +25,48 @@
             <button id="botonCarrito" class="btn-carrito"><i class="fa-solid fa-cart-shopping"></i></button>
         </nav>
 
-        <main id="contenedorCardsIndex" class="row">
-            <!-- Aca se auto generan los productos del index. -->
-        </main>
+        <main>
+            <section id="contenedorCardsIndex" class="row">
+                <!-- Aca se auto generan los productos del index. -->
+            </section>
 
-        <section>
-            <div id="contenedorCardsMiCarrito"></div>
-        </section>
+            <section id="contenedorCardsMiCarrito">
+                <div id="headerTablaCarrito">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio</th>
+                                <th>Foto</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contenedorProductosAgregados">
+                            <!-- Aca se generar los productos del carrito que se elegieron -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="contenedorPrecioCarrito">
+                    <div class="card text-center dark bg-light">
+                        <div class="card-header text-danger">
+                            Mi carrito
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Total</h5>
+                            <!-- <p class="card-text">350 $</p> TENGO QUE AGREGARLO DESDE EL HTML -->
+                            <a href="#" class="btn btn-danger">Finalizar Compra</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
+    <script src="assets/js/productos.js"></script>
     <script src="assets/js/funcionalidad.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

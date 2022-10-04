@@ -69,7 +69,16 @@
     background: none;
     border: none;
 }
+
 /* Fin Logo carrito */
+
+.card {
+    width: 380px;
+}
+
+img {
+    border-radius: 13%;
+}
 
 
 @media (min-width: 992px) {
