@@ -1,5 +1,4 @@
 const contenedorCardsIndex = document.getElementById('contenedorCardsIndex');
-const tallesProductos = ["s", "m", "l"]; //Array de los talles que van a tener todos los productos
 let productosDelCarrito = []; //Array que va a llenarse con los productos que vaya seleccionado el usuario y agregando al carrito con el push
 const botonCarrito = document.getElementById('botonCarrito');
 const contenedorCardsMiCarrito = document.getElementById('contenedorCardsMiCarrito');
